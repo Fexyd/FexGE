@@ -6,6 +6,8 @@
 #define FENNEX_GAME_ENGINE___FEXGE_WINDOW_H
 
 #include <memory>
+#include <vector>
+#include <string>
 
 namespace FexGE::Plataform
 {
@@ -29,7 +31,7 @@ namespace FexGE::Plataform
         // Render
         void win_clear();
         void win_display();
-        void win_draw(void* drawable);
+        void win_draw(int vertexCount, std::vector<float>& vertexArray, float posX, float posY);
 
         // Input
         void win_pollEvent();

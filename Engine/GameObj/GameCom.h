@@ -12,14 +12,21 @@ namespace FexGE::Engine
 
     class GameCom
     {
-
     private:
         GameObj* parent;
     public:
         GameCom() : parent(nullptr) {};
         virtual ~GameCom() = default;
 
+        virtual void Start() {}
+        virtual void OnEnable() {}
+        virtual void OnDisable() {}
+
         virtual void Update(float dt) {}
+
+        virtual void Render(float dt) {}
+
+        virtual void Destroy() {}
 
         void SetParent(GameObj* parent);
     };

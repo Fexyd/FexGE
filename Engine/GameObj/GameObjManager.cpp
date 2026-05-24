@@ -12,6 +12,8 @@ FexGE::Engine::GameObjManager::~GameObjManager()
     }
 }
 
+
+
 void FexGE::Engine::GameObjManager::Initialize()
 {
 
@@ -22,7 +24,7 @@ void FexGE::Engine::GameObjManager::Update(int dt)
     //Process List Of Destroy
     for (auto gameObj : _pendingDestroy)
     {
-        //gameObj->Destroy();
+        gameObj->Destroy();
         delete gameObj;
     }
     _pendingDestroy.clear();
@@ -30,7 +32,7 @@ void FexGE::Engine::GameObjManager::Update(int dt)
     //Process List of Creation
     for (auto gameObj : _pendingCreate)
     {
-        //gameObj->Start();
+        gameObj->Start();
         _gameObjs.push_back(gameObj);
     }
     _pendingCreate.clear();
@@ -38,6 +40,14 @@ void FexGE::Engine::GameObjManager::Update(int dt)
     for (auto gameObj : _gameObjs)
     {
         gameObj->Update(dt);
+    }
+}
+
+void FexGE::Engine::GameObjManager::Render(int dt)
+{
+    for (auto gameObj : _gameObjs)
+    {
+        gameObj->Render(dt);
     }
 }
 

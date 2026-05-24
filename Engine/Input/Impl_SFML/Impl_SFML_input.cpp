@@ -132,3 +132,7 @@ bool FexGE::Input::CInput::in_is_key_up(KeyCode key)
     return m_impl->current_state[key] ? false : true;
 }
 
+bool FexGE::Input::CInput::in_is_key_pressed(KeyCode key)
+{
+    return m_impl->current_state[key];
+}

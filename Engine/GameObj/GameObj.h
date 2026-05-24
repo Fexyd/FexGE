@@ -29,7 +29,15 @@ namespace FexGE::Engine
 
         void SetActive(bool active);
 
-        void Update(float dt);
+        void Start();
+        void OnEnable();
+        void OnDisable();
+
+        void Update(float dt); // -
+
+        void Render(float dt);
+
+        void Destroy();
 
     };
 }

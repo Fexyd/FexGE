@@ -7,6 +7,9 @@
 #include <vector>
 
 #include "GameObj.h"
+#include "../Plataform/Window.h"
+
+
 
 namespace FexGE::Engine
 {
@@ -21,10 +24,14 @@ namespace FexGE::Engine
         ~GameObjManager();
 
         void Initialize();
+
         void Update(int dt);
+        void Render(int dt);
 
         GameObj* CreateGameObj(std::string name);
         void DestroyGameObj(GameObj* gameObj);
+
+
     };
 }
 

@@ -26,6 +26,7 @@ namespace FexGE::Engine
     public:
         CGameloop();
         ~CGameloop();
+        void Initialize(Plataform::CWindow& win );
         void Run();
     };
 }

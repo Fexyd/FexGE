@@ -63,10 +63,27 @@ void FexGE::Plataform::CWindow::win_close()
 
 // RENDER
 
-void FexGE::Plataform::CWindow::win_draw(void* drawable)
+void FexGE::Plataform::CWindow::win_draw(int vertexCount, std::vector<float>& vertexArray, float posX, float posY)
 {
-    sf::Drawable* d = static_cast<sf::Drawable*>(drawable);
-    m_impl->window.draw(*d);
+    // Verificaciones rápidas
+    if (vertexArray.empty()) return;
+    if (vertexCount < 3) return;
+    if (vertexArray.size() != vertexCount * 2) return;
+
+    // Convertir a SFML
+    sf::ConvexShape shape;
+    shape.setPointCount(vertexCount);
+
+    // Calcular centro y aplicar posición
+    for (int i = 0; i < vertexCount; i++)
+    {
+        float x = vertexArray[i * 2] + posX;
+        float y = vertexArray[i * 2 + 1] + posY;
+        shape.setPoint(i, sf::Vector2f(x, y));
+    }
+
+    // Dibujar
+    m_impl->window.draw(shape);
 }
 
 void FexGE::Plataform::CWindow::win_display()
