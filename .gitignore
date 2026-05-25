@@ -1,0 +1,21 @@
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.user
+
+# Build
+build/
+cmake-build-*/
+*.o
+*.obj
+*.exe
+*.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime (opcional, según tu workflow)
+*.log
+temp/
