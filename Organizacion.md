@@ -1,14 +1,16 @@
-# Some forms to organize the proyect
+# Algunas formas de organizar
 
 --- 
 
 ## SECCIONES
 
-**En el proyecto hay varias secciones que pueden pertenecer desde cosas de bajo nivel como el corazón del Engine hasta simple GUI o UI**
+**En el proyecto hay varias secciones que pueden pertenecer desde cosas de bajo nivel como el corazón del Engine hasta simple UI**
+
+Estas secciones nos ayudan a organizar el proyecto en secciones claras y concisas para poder tratar con el proyecto de la mejor forma posible.
 
 ---
 
-#### **Las principales son:**
+#### **Algunas de las principales son:**
 
 ### **- Core**: 
 
@@ -30,5 +32,9 @@ Es todo lo que conforma el Editor.
 
 ## Convencion de archivos
 
-dependiendo a que sección pertenece tendra un nombre u otro
+dependiendo de a que sección pertenece tendra un nombre u otro.
 
+**algunos ejemplos:**
+
+* **WiWindow.cpp
+* **Runtime
