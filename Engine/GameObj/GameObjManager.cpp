@@ -13,12 +13,6 @@ FexGE::Engine::GameObjManager::~GameObjManager()
 }
 
 
-
-void FexGE::Engine::GameObjManager::Initialize()
-{
-
-}
-
 void FexGE::Engine::GameObjManager::Update(int dt)
 {
     //Process List Of Destroy
