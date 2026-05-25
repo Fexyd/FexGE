@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SFML/Window/Window.hpp>
 
-#include "Engine/Gameloop/Gameloop.h"
-#include "Engine/Plataform/Window.h"
+#include "Gameloop/Gameloop.h"
+#include "Plataform/Window.h"
 
 using namespace FexGE;
 

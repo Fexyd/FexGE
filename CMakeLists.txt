@@ -3,7 +3,7 @@ project(FexGE)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Fennex_Game_Engine___FexGE main.cpp
+add_executable(Fennex_Game_Engine___FexGE Engine/main.cpp
         Engine/Plataform/Window.h
         Engine/Plataform/Impl_SFML/Impl_SFML_window.cpp
         Engine/Input/Input.h
