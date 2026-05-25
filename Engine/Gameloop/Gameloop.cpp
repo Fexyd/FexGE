@@ -3,40 +3,8 @@
 //
 
 #include "Gameloop.h"
-#include <iostream>
 
-#include "../Input/Input.h"
 
-class GameObjTEST : public FexGE::Engine::GameCom
-{
-private:
-    FexGE::Plataform::CWindow* win;
-public:
-
-    GameObjTEST(FexGE::Plataform::CWindow* window);
-
-    FexGE::Input::CInput* input = new FexGE::Input::CInput();
-    std::vector<float> vertexArray = {10, 0, 0, 10, -10, 0};
-
-    std::pair<float, float> POS = {100, 100};
-
-    void Update(float dt) override
-    {
-        input->in_update();
-        if (input->in_is_key_pressed(FexGE::Input::KEY_S))
-        {
-            std::cout << "W" << std::endl;
-            POS.second += 1;
-        }
-    }
-
-    void Render(float dt) override
-    {
-        win->win_draw(3, vertexArray, POS.first, POS.second);
-    }
-};
-
-GameObjTEST::GameObjTEST(FexGE::Plataform::CWindow* window) : win(window) {}
 
 FexGE::Engine::CGameloop::CGameloop()
 {
@@ -48,13 +16,7 @@ FexGE::Engine::CGameloop::~CGameloop()
     delete _GameObjManager;
 }
 
-void FexGE::Engine::CGameloop::Initialize(FexGE::Plataform::CWindow& win)
-{
-    _GameObjManager->Initialize();
-    GameObjTEST* _gameComTEST = new GameObjTEST(&win);
-    GameObj* gameTestOBJ = _GameObjManager->CreateGameObj("GameObjTEST");
-    gameTestOBJ->AddComponent(_gameComTEST);
-}
+
 
 void FexGE::Engine::CGameloop::Run()
 {
